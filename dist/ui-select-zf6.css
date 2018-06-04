@@ -1,45 +1,9 @@
 
 
-@media print, screen and (min-width: 40em) {
-  .form-inline .form-group {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle; }
-  .form-inline .ui-select-zf6,
-  .form-inline input, .form-inline select, .form-inline textarea {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle; }
-    .form-inline .ui-select-zf6.ui-select-search-hidden,
-    .form-inline input.ui-select-search-hidden, .form-inline select.ui-select-search-hidden, .form-inline textarea.ui-select-search-hidden {
-      display: none; }
-  .form-inline .ui-select-zf6 {
-    min-width: 150px;
-    width: auto !important; }
-    .form-inline .ui-select-zf6 .ui-select-toggle.button,
-    .form-inline .ui-select-zf6 input.ui-select-search {
-      height: auto; }
-  .form-inline label {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0; }
-  .form-inline .radio,
-  .form-inline .checkbox {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 0;
-    vertical-align: middle; }
-    .form-inline .radio label,
-    .form-inline .checkbox label {
-      padding-left: 0; }
-  .form-inline .radio input[type="radio"],
-  .form-inline .checkbox input[type="checkbox"] {
-    position: relative;
-    margin-left: 0; } }
-
 
 .ui-select-zf6 {
   position: relative;
+  
   
   
   
@@ -227,6 +191,17 @@
       margin-bottom: 0; }
     .ui-select-zf6.input-group-field .ui-select-dropdown {
       margin-top: 0; }
+  @media print, screen and (min-width: 40em) {
+    .form-inline .ui-select-zf6 {
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 150px;
+      width: auto !important; }
+      .form-inline .ui-select-zf6 .ui-select-toggle.button,
+      .form-inline .ui-select-zf6 input.ui-select-search {
+        height: auto; }
+      .form-inline .ui-select-zf6 input.ui-select-search-hidden {
+        display: none; } }
   .ui-select-zf6.ui-select-multiple {
      }
     .ui-select-zf6.ui-select-multiple .ui-select-match-item.button {

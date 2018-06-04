@@ -4,11 +4,6 @@
  *
  * Licensed under MIT Open Source
  */
-@import "mixins/forms";
-
-.form-inline {
-  @include form-inline;
-}
 
 /* ui-select form element for zf-6*/
 .ui-select-zf6 {
@@ -201,6 +196,29 @@
       margin-top: 0;
     }
   }
+
+
+
+  /* Form Inline */
+  .form-inline & {
+    @include breakpoint(medium) {
+
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 150px;
+      width: auto !important;
+
+      .ui-select-toggle.button,
+      input.ui-select-search {
+        height: auto;
+      }
+
+      input.ui-select-search-hidden {
+        display: none;
+      }
+    }
+  }
+
 
 
   /* Multiple Select */
