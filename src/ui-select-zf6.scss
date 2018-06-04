@@ -1,0 +1,227 @@
+/**
+ * UI Select Foundation 6 by Viamonkey
+ * Version 1.0.0
+ *
+ * Licensed under MIT Open Source
+ */
+@import "mixins/forms";
+
+.form-inline {
+  @include form-inline;
+}
+
+/* ui-select form element for zf-6*/
+.ui-select-zf6 {
+  position: relative;
+
+  /* Align text */
+  & > .ui-select-match > .button {
+    /* Instead of center because of .button */
+    text-align: left !important;
+  }
+
+  /* Button select toogle same as zf6 form-element */
+  .ui-select-toggle {
+
+    box-sizing: border-box;
+    width: 100%;
+
+    /*  button for select same style as input*/
+    &.button {
+      @include form-select;
+    }
+
+    /* Single line text */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    /* Allow Clear */
+    .close-button.small {
+      right: strip-unit(-zf-get-size-val($closebutton-offset-horizontal, small)) + 1 + rem;
+    }
+
+    .ui-select-match-text {
+      display: block;
+
+      /* Single line text */
+      overflow: inherit;
+      white-space: inherit;
+      text-overflow: inherit;
+
+
+
+      /* Padding for clear button */
+      &.ui-select-allow-clear {
+        padding-right: -zf-get-size-val($closebutton-size, small);
+      }
+    }
+  }
+
+  /* ui-select dropdown open */
+  &.open {
+
+    body > & {
+      z-index: 1000;
+    }
+
+    //Remove custom radius on open
+    .ui-select-toggle.button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      //Same Focus Style select
+      outline: none;
+      border: $input-border-focus;
+      background-color: $input-background-focus;
+      box-shadow: $input-shadow-focus;
+
+      @if has-value($input-transition) {
+        transition: $input-transition;
+      }
+    }
+
+  }
+
+  /* Dropdown */
+  .ui-select-dropdown {
+    width: 100%;
+    padding: 0;
+    margin-top: -$form-spacing - rem-calc(1); //Fix position dropdown
+
+    &.dropdown-pane {
+      border-bottom-left-radius: $input-radius;
+      border-bottom-right-radius: $input-radius;
+    }
+
+    /* Size */
+    .ui-select-choices,
+    .ui-select-no-choice {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+    }
+
+    /* list style */
+    .ui-select-choices {
+      padding: $global-menu-padding;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+      list-style: none;
+
+      /* Line item style*/
+      .ui-select-choices-row > span{
+        display: block;
+        cursor: pointer;
+        clear: both;
+        padding: $input-padding;
+        font-weight: $input-font-weight;
+        line-height: $input-line-height;
+        color: $input-color;
+
+        *:first-child {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      /* Hover line item style*/
+      .ui-select-choices-row > span:hover,
+      .ui-select-choices-row > span:focus {
+        text-decoration: none;
+        background-color: $menu-item-background-hover;
+      }
+
+      /* Active line item style*/
+      .ui-select-choices-row.active > span {
+        color: $menu-item-color-active;
+        text-decoration: none;
+        outline: 0;
+        background-color: $menu-item-background-active;
+      }
+
+      .ui-select-header-group-selectable {
+        color: $input-color;
+        cursor: pointer;
+        padding: $input-padding;
+
+        &:hover {
+          background-color: $menu-item-background-hover;
+        }
+      }
+
+    }
+  }
+
+  /* Header and Footer dropdown */
+  .ui-select-footer,
+  .ui-select-header {
+    display: block;
+    clear: both;
+    padding: $global-menu-padding;
+    font-weight: $input-font-weight;
+    line-height: $input-line-height;
+  }
+  .ui-select-footer {
+    border-top: $input-border;
+  }
+  .ui-select-header {
+    border-bottom: $input-border;
+  }
+
+  /* Search input disable */
+  .ui-select-search-hidden {
+    opacity: 0;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  /* Validation */
+  &.ng-dirty.ng-invalid > .ui-select-match .ui-select-toggle.button {
+    @include form-input-error;
+  }
+
+  /* Input Group */
+  &.input-group-field {
+
+    /* Fix margin input */
+    .ui-select-search,
+    .ui-select-toggle.button {
+      margin-bottom: 0;
+    }
+
+    /* Fix margin dropdown */
+    .ui-select-dropdown {
+      margin-top: 0;
+    }
+  }
+
+
+  /* Multiple Select */
+  &.ui-select-multiple {
+
+    /* Item selected style button */
+    .ui-select-match-item.button {
+      @include button-hollow;
+      @include button-hollow-style;
+      margin-bottom: 0;
+      margin-right: 2px;
+
+      //Fix size and position close button
+      .close-button {
+        position: relative;
+        float: right;
+        right: 0;
+        top: 0;
+        font-size: inherit;
+      }
+    }
+  }
+
+}

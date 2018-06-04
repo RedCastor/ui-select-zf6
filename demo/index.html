@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>UI Select Zurb Foundation 6 Bridge. CSS and Components bridge from Bootstrap to Foundation 6</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="dist/images/icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="dist/styles/foundation.css">
+    <link rel="stylesheet" href="../dist/ui-select-zf6.css">
+    <link rel="stylesheet" href="dist/styles/main.css">
+    <script src="dist/scripts/main.js" type="application/javascript"></script>
+</head>
+<body data-ng-app="app" >
+<!--[if lt IE 9]>
+<div class="alert alert-warning browserupgrade">
+    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+</div>
+<![endif]-->
+
+<header class="container-fluid header-main">
+    <div class="row">
+        <div class="small-12">
+            <div class="text-center">
+                <h1 class="page-header">BS3-2-ZF6</h1>
+                <h3><small>UI Select Zurb Foundation 6 CSS and Components Bridge.</small></h3>
+                <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6"><i class="fa fa-github"></i>&nbsp;&nbsp;View on GitHub</a>
+                <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6/releases"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
+                <h5 class="version"><small>Currently v1.0.0</small></h5>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container" data-ng-controller="DemoCtrl as ctrl">
+        <div class="row">
+            <section class="small-12 column">
+                <header>
+                    <h2 class="page-header">Select box Form</h2>
+                </header>
+
+                <form action="" class="form-inline">
+
+                    <div class="form-group">
+                        <label for="country_1_label" class="text-right">Country:</label>
+                        <ui-select id="country_1_label" ng-model="ctrl.country1.selected"
+                                   theme="zf6"
+                                   reset-search-input="true"
+                                   search-enabled="true"
+                                   title="Choose an country"
+                                   ng-required="true"
+                        >
+                            <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
+
+                            <ui-select-header>Top of the list!</ui-select-header>
+                            <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                            <div ng-bind-html="country.name | highlight: $select.search"></div>
+                            </ui-select-choices>
+                            <ui-select-footer>Bottom of the list.</ui-select-footer>
+                        </ui-select>
+                    </div>
+
+
+                    <ui-select ng-model="ctrl.country2.selected"
+                               theme="zf6"
+                               reset-search-input="true"
+                               search-enabled="false"
+                               title="Choose an country"
+                               ng-required="true"
+                    >
+                        <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
+
+                        <ui-select-header>Top of the list!</ui-select-header>
+                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                        <div ng-bind-html="country.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                        <ui-select-footer>Bottom of the list.</ui-select-footer>
+                    </ui-select>
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            <span class="input-group-label">$</span>
+
+                            <ui-select class="input-group-field"
+                                       ng-model="ctrl.address3.selected"
+                                       theme="zf6"
+                                       ng-disabled="ctrl.disabled"
+                                       reset-search-input="true"
+                                       title="Choose an address">
+                                <ui-select-match placeholder="Enter an address">{{$select.selected.formatted_address}}</ui-select-match>
+                                <ui-select-choices repeat="address in ctrl.addresses track by $index"
+                                                   refresh="ctrl.refreshAddresses($select.search)"
+                                                   refresh-delay="500">
+                                    <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                            <div class="input-group-button">
+                                <input type="submit" class="button" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-label">$</span>
+                            <input class="input-group-field" type="number">
+                            <div class="input-group-button">
+                                <input type="submit" class="button" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <form action="">
+
+                    <ui-select multiple ng-model="ctrl.country.multiSelected"
+                               theme="zf6"
+                               title="Choose an country"
+                               ng-required="true"
+                    >
+                        <ui-select-match placeholder="Enter an country">{{$item.name}}</ui-select-match>
+
+                        <ui-select-header>Top of the list!</ui-select-header>
+                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                            <div ng-bind-html="country.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                        <ui-select-footer>Bottom of the list.</ui-select-footer>
+                    </ui-select>
+
+                    <ui-select ng-model="ctrl.country.selected"
+                               theme="zf6"
+                               reset-search-input="true"
+                               search-enabled="false"
+                               title="Choose an country"
+                               ng-required="true"
+                    >
+                        <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
+
+                        <ui-select-header>Top of the list!</ui-select-header>
+                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                            <div ng-bind-html="country.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                        <ui-select-footer>Bottom of the list.</ui-select-footer>
+                    </ui-select>
+
+
+                    <ui-select ng-model="ctrl.address2.selected"
+                               theme="zf6"
+                               ng-disabled="true"
+                               reset-search-input="true"
+                               title="Choose an address">
+                        <ui-select-match placeholder="Enter an address">{{$select.selected.formatted_address}}</ui-select-match>
+                        <ui-select-choices repeat="address in ctrl.addresses track by $index"
+                                           refresh="ctrl.refreshAddresses($select.search)"
+                                           refresh-delay="500">
+                            <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+
+                    <div class="input-group">
+
+                        <span class="input-group-label">$</span>
+
+                        <ui-select class="input-group-field"
+                                   ng-model="ctrl.address3.selected"
+                                   theme="zf6"
+                                   ng-disabled="ctrl.disabled"
+                                   reset-search-input="true"
+                                   title="Choose an address">
+                            <ui-select-match placeholder="Enter an address">{{$select.selected.formatted_address}}</ui-select-match>
+                            <ui-select-choices repeat="address in ctrl.addresses track by $index"
+                                               refresh="ctrl.refreshAddresses($select.search)"
+                                               refresh-delay="500">
+                                <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-label">$</span>
+                        <input class="input-group-field" type="number">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script src="dist/scripts/main.js"></script>
+
+</body>
+</html>

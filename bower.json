@@ -1,0 +1,34 @@
+{
+  "name": "ui-select-zf6",
+  "version": "1.0.0",
+  "author": "Auban le Grelle <auban@viamonkey.com>",
+  "homepage": "https://redcastor.io",
+  "description": "",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "angulrjs",
+    "foundation",
+    "angular-ui-select",
+    "converter",
+    "bridge"
+  ],
+  "main": [
+    "dist/ui-select-zf6.css",
+    "dist/ui-select-zf6.js",
+    "src/ui-select-zf6.scss"
+  ],
+  "ignore": [
+    "**/.*",
+    "**/*.txt",
+    ".jscsrc",
+    ".jshintrc",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.4.3"
+  }
+}
