@@ -61,9 +61,18 @@
     }
 
     //Remove custom radius on open
-    .ui-select-toggle.button {
+    .ui-select-dropdown.dropdown-pane {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .ui-select-toggle.button,
+    input.ui-select-search {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+    }
+
+    .ui-select-toggle.button {
 
       //Same Focus Style select
       outline: none;
@@ -85,8 +94,8 @@
     margin-top: -$form-spacing - rem-calc(1); //Fix position dropdown
 
     &.dropdown-pane {
-      border-bottom-left-radius: $input-radius;
-      border-bottom-right-radius: $input-radius;
+      border-top-left-radius: $input-radius;
+      border-top-right-radius: $input-radius;
     }
 
     /* Size */
@@ -180,13 +189,20 @@
     @include form-input-error;
   }
 
+
   /* Input Group */
-  &.input-group-field {
+  .input-group & {
 
     /* Fix margin input */
-    .ui-select-search,
-    .ui-select-toggle.button {
+    .ui-select-toggle.button,
+    input.ui-select-search {
+      height: ($input-font-size + $form-spacing * 1.5);
       margin-bottom: 0;
+      border-radius: inherit;
+    }
+
+    .ui-select-match {
+      border-radius: inherit;
     }
 
     /* Fix margin dropdown */
@@ -194,8 +210,6 @@
       margin-top: 0;
     }
   }
-
-
 
   /* Form Inline */
   .form-inline & {
@@ -206,11 +220,10 @@
       min-width: 150px;
       width: auto !important;
 
-      .ui-select-match,
+
       .ui-select-toggle.button,
       input.ui-select-search {
-        height: inherit;
-        border-radius: inherit;
+        height: ($input-font-size + $form-spacing * 1.5);
       }
 
       input.ui-select-search-hidden {

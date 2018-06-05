@@ -35,7 +35,7 @@
          -moz-appearance: none;
               appearance: none;
       border: 1px solid #cacaca;
-      border-radius: 0;
+      border-radius: 4px;
       background-color: #fefefe;
       font-family: inherit;
       font-size: 1rem;
@@ -89,9 +89,14 @@
         padding-right: 1.5em; }
   body > .ui-select-zf6.open {
     z-index: 1000; }
-  .ui-select-zf6.open .ui-select-toggle.button {
+  .ui-select-zf6.open .ui-select-dropdown.dropdown-pane {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  .ui-select-zf6.open .ui-select-toggle.button,
+  .ui-select-zf6.open input.ui-select-search {
     border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  .ui-select-zf6.open .ui-select-toggle.button {
     outline: none;
     border: 1px solid #8a8a8a;
     background-color: #fefefe;
@@ -109,8 +114,8 @@
     
      }
     .ui-select-zf6 .ui-select-dropdown.dropdown-pane {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0; }
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
     .ui-select-zf6 .ui-select-dropdown .ui-select-choices,
     .ui-select-zf6 .ui-select-dropdown .ui-select-no-choice {
       width: 100%;
@@ -181,13 +186,17 @@
       color: #cc4b37; }
     .ui-select-zf6.ng-dirty.ng-invalid > .ui-select-match .ui-select-toggle.button:not(:focus)::placeholder {
       color: #cc4b37; }
-  .ui-select-zf6.input-group-field {
+  .input-group .ui-select-zf6 {
     
      }
-    .ui-select-zf6.input-group-field .ui-select-search,
-    .ui-select-zf6.input-group-field .ui-select-toggle.button {
-      margin-bottom: 0; }
-    .ui-select-zf6.input-group-field .ui-select-dropdown {
+    .input-group .ui-select-zf6 .ui-select-toggle.button,
+    .input-group .ui-select-zf6 input.ui-select-search {
+      height: 2.5rem;
+      margin-bottom: 0;
+      border-radius: inherit; }
+    .input-group .ui-select-zf6 .ui-select-match {
+      border-radius: inherit; }
+    .input-group .ui-select-zf6 .ui-select-dropdown {
       margin-top: 0; }
   @media print, screen and (min-width: 40em) {
     .form-inline .ui-select-zf6 {
@@ -195,11 +204,9 @@
       vertical-align: middle;
       min-width: 150px;
       width: auto !important; }
-      .form-inline .ui-select-zf6 .ui-select-match,
       .form-inline .ui-select-zf6 .ui-select-toggle.button,
       .form-inline .ui-select-zf6 input.ui-select-search {
-        height: inherit;
-        border-radius: inherit; }
+        height: 2.5rem; }
       .form-inline .ui-select-zf6 input.ui-select-search-hidden {
         display: none; } }
   .ui-select-zf6.ui-select-multiple {

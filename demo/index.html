@@ -56,12 +56,9 @@
                                    ng-required="true"
                         >
                             <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
-
-                            <ui-select-header>Top of the list!</ui-select-header>
                             <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
                             <div ng-bind-html="country.name | highlight: $select.search"></div>
                             </ui-select-choices>
-                            <ui-select-footer>Bottom of the list.</ui-select-footer>
                         </ui-select>
                     </div>
 
@@ -157,11 +154,9 @@
                     >
                         <ui-select-match placeholder="Enter an country">{{$item.name}}</ui-select-match>
 
-                        <ui-select-header>Top of the list!</ui-select-header>
-                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search track by $index">
                             <div ng-bind-html="country.name | highlight: $select.search"></div>
                         </ui-select-choices>
-                        <ui-select-footer>Bottom of the list.</ui-select-footer>
                     </ui-select>
 
                     <ui-select ng-model="ctrl.country.selected"
@@ -173,11 +168,9 @@
                     >
                         <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
 
-                        <ui-select-header>Top of the list!</ui-select-header>
-                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search track by $index">
                             <div ng-bind-html="country.name | highlight: $select.search"></div>
                         </ui-select-choices>
-                        <ui-select-footer>Bottom of the list.</ui-select-footer>
                     </ui-select>
 
 
