@@ -31,7 +31,7 @@
             <h3><small>UI Select Zurb Foundation 6 - Template and CSS.</small></h3>
             <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6"><i class="fa fa-github"></i>&nbsp;&nbsp;View on GitHub</a>
             <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6/releases"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
-            <h5 class="version"><small>Currently v1.0.1</small></h5>
+            <h5 class="version"><small>Currently v1.0.0</small></h5>
         </div>
     </div>
 
@@ -75,22 +75,41 @@
                         <option value="">Test4</option>
                         <option value="">Test5</option>
                     </select>
-                    <ui-select ng-model="ctrl.country2.selected"
-                               theme="zf6"
-                               reset-search-input="true"
-                               search-enabled="false"
-                               title="Choose an country"
-                               ng-required="true"
-                    >
-                        <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
 
-                        <ui-select-header>Top of the list!</ui-select-header>
-                        <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
-                        <div ng-bind-html="country.name | highlight: $select.search"></div>
-                        </ui-select-choices>
-                        <ui-select-footer>Bottom of the list.</ui-select-footer>
-                    </ui-select>
+                    <div class="form-group">
+                        <div class="input-group">
 
+                            <span class="input-group-label">$</span>
+
+                            <ui-select class="input-group-field"
+                                       ng-model="ctrl.address3.selected"
+                                       theme="zf6"
+                                       ng-disabled="ctrl.disabled"
+                                       reset-search-input="true"
+                                       title="Choose an address">
+                                <ui-select-match placeholder="Enter an address">{{$select.selected.formatted_address}}</ui-select-match>
+                                <ui-select-choices repeat="address in ctrl.addresses track by $index"
+                                                   refresh="ctrl.refreshAddresses($select.search)"
+                                                   refresh-delay="500">
+                                    <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                            <div class="input-group-button">
+                                <input type="submit" class="button" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-label">$</span>
+                            <input class="input-group-field" type="number">
+                            <div class="input-group-button">
+                                <input type="submit" class="button" value="Submit">
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="input-group">

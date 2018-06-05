@@ -1,6 +1,6 @@
 {
   "name": "ui-select-zf6",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "Auban le Grelle <auban@viamonkey.com>",
   "homepage": "https://redcastor.io",
   "description": "",
@@ -32,6 +32,5 @@
     "angular": ">=1.2.18",
     "angular-ui-select": ">=0.19.8",
     "foundation-sites": "^6.4.3"
-
   }
 }
