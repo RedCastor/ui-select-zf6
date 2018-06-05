@@ -206,9 +206,11 @@
       min-width: 150px;
       width: auto !important;
 
+      .ui-select-match,
       .ui-select-toggle.button,
       input.ui-select-search {
-        height: ($input-font-size + $form-spacing * 1.5);
+        height: inherit;
+        border-radius: inherit;
       }
 
       input.ui-select-search-hidden {

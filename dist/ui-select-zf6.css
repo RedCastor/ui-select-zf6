@@ -195,9 +195,11 @@
       vertical-align: middle;
       min-width: 150px;
       width: auto !important; }
+      .form-inline .ui-select-zf6 .ui-select-match,
       .form-inline .ui-select-zf6 .ui-select-toggle.button,
       .form-inline .ui-select-zf6 input.ui-select-search {
-        height: 2.5rem; }
+        height: inherit;
+        border-radius: inherit; }
       .form-inline .ui-select-zf6 input.ui-select-search-hidden {
         display: none; } }
   .ui-select-zf6.ui-select-multiple {
