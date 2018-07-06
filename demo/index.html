@@ -31,7 +31,7 @@
             <h3><small>UI Select Zurb Foundation 6 - Template and CSS.</small></h3>
             <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6"><i class="fa fa-github"></i>&nbsp;&nbsp;View on GitHub</a>
             <a class="button hollow secondary" href="https://github.com/RedCastor/ui-select-zf6/releases"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
-            <h5 class="version"><small>Currently v1.0.1</small></h5>
+            <h5 class="version"><small>Currently v1.0.2</small></h5>
         </div>
     </div>
 
@@ -56,6 +56,21 @@
                                    ng-required="true"
                         >
                             <ui-select-match allow-clear="true" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
+                            <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
+                            <div ng-bind-html="country.name | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country_2_label" class="text-right">Country:</label>
+                        <ui-select class="fit-dropdown" id="country_2_label" ng-model="ctrl.country1.selected"
+                                   theme="zf6"
+                                   search-enabled="false"
+                                   title="Choose an country"
+                                   ng-required="true"
+                        >
+                            <ui-select-match allow-clear="false" placeholder="Enter an country">{{$select.selected.name}}</ui-select-match>
                             <ui-select-choices repeat="country.code as country in ctrl.countries | filter: $select.search" track by $index">
                             <div ng-bind-html="country.name | highlight: $select.search"></div>
                             </ui-select-choices>

@@ -217,8 +217,18 @@
 
       display: inline-block;
       vertical-align: middle;
-      min-width: 80px;
+
+      &[search-enabled="true"] {
+        min-width: 150px;
+      }
+
       width: auto !important;
+
+      &.fit-dropdown {
+        .ui-select-dropdown {
+          width: 100%;
+        }
+      }
 
       .ui-select-dropdown {
         width: auto;
