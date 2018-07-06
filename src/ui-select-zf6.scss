@@ -160,6 +160,26 @@
     }
   }
 
+  /* Dropdown align and fit */
+  &.dropdown-auto {
+    .ui-select-dropdown {
+      width: auto;
+    }
+  }
+
+  &.dropdown-align-right {
+    .ui-select-dropdown {
+      right: 0;
+    }
+  }
+
+  &.dropdown-align-left {
+    .ui-select-dropdown {
+      left: 0;
+    }
+  }
+
+
   /* Header and Footer dropdown */
   .ui-select-footer,
   .ui-select-header {
@@ -223,16 +243,6 @@
       }
 
       width: auto !important;
-
-      &.fit-dropdown {
-        .ui-select-dropdown {
-          width: 100%;
-        }
-      }
-
-      .ui-select-dropdown {
-        width: auto;
-      }
 
       .ui-select-toggle.button,
       input.ui-select-search {
