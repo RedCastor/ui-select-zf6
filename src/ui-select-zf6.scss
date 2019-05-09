@@ -167,6 +167,12 @@
     }
   }
 
+  &.direction-up {
+    .ui-select-dropdown {
+      margin-top: 0;
+    }
+  }
+
   &.dropdown-align-right {
     .ui-select-dropdown {
       right: 0;
