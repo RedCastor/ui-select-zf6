@@ -5,6 +5,12 @@
  * Licensed under MIT Open Source
  */
 
+/**
+* Background color for an hovered menu item.
+* @type Color
+*/
+$menu-item-background-hover: $light-gray !default;
+
 /* ui-select form element for zf-6*/
 .ui-select-zf6 {
   position: relative;
